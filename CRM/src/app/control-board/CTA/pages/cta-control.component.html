@@ -1,0 +1,279 @@
+<div class="col-lg-12" style="background-color: #fff; padding: 0;position:relative">
+    <div class="pull-left" id="1">
+        <ul role="tablist" class="nav nav-tabs justify-content-start" style="padding-left:10px;">
+            <li class="nav-item">
+                <a class="nav-link pull-left" href="" role="tab" id="ngb-tab-0" aria-controls="ngb-tab-0-panel" aria-expanded="true" aria-disabled="false" [routerLink]="['/control-board/playbook']">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link pull-left active" href="" role="tab" id="ngb-tab-1" aria-expanded="false" aria-disabled="false" [routerLink]="['/control-board']">
+                    <i class="fa fa-list-ul" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="pull-left block-colorful-1">
+        <img src="assets/images/line-column-up.png" />
+        <h4>{{totalCTA}} CTAs</h4>
+    </div>
+    <!-- <div class="pull-left block-colorful-2">
+        <img src="assets/images/line-column-down.png" />
+        <h4>12 Rủi ro</h4>
+    </div> -->
+    <div class="pull-left block-colorful-3">
+        <img src="assets/images/clock.png" />
+        <h4>30 Hành động quá hạn</h4>
+    </div>
+    <div class="pull-left search-lst-block">
+        <input class="search-list" type="text" placeholder="Tìm kiếm CTAs...">
+        <span class="search-lst-icon">
+            <i class="fa fa-search"></i>
+        </span>
+    </div>
+    <div class="pull-right" style="padding: 15px 15px 0 0;">
+        <i aria-hidden="true" class="fa fa-cog"></i>
+    </div>
+</div>
+
+<div class="setting-db-body pull-left">
+    <div class="add-user-button pull-left">
+        <button type="button" (click)="createCTA()">
+            <span>Thêm mới CTA</span>
+        </button>
+    </div>
+    <!-- <div class="sort">
+        <span>Hiển thị</span>
+        <select>
+            <option value="All">Tất cả</option>
+            <option value="Due date">Ngày hết hạn</option>
+        </select>
+        <div class="selectLabel"></div>
+    </div>
+    <div class="sort">
+        <span>Nhóm theo</span>
+        <select style="width: 88px">
+            <option value="All">Tất cả</option>
+            <option value="Due date">Ngày hết hạn</option>
+        </select>
+        <div class="selectLabel"></div>
+    </div>
+    <div class="sort">
+        <span>Sắp xếp theo</span>
+        <select style="width: 88px">
+            <option value="All">Tất cả</option>
+            <option value="Due date">Ngày hết hạn</option>
+        </select>
+        <div class="selectLabel"></div>
+    </div>
+    <div class="sort">
+        <span>Kiểu</span>
+        <select>
+            <option value="All">Tất cả</option>
+            <option value="Due date">Ngày hết hạn</option>
+        </select>
+        <div class="selectLabel"></div>
+    </div>
+    <div class="sort">
+        <span>Ưu tiên</span>
+        <select>
+            <option value="All">Tất cả</option>
+            <option value="Due date">Ngày hết hạn</option>
+        </select>
+        <div class="selectLabel"></div>
+    </div> -->
+    <div class="table-responsive col-lg-12 padd-none">
+        <div class="table-color">
+            <table class="table th-table thc-table">
+                <thead>
+                    <tr>
+                        <th style="width:60px;">
+                            <div class="checkbox" style="margin-bottom:0;width:18px">
+                                <input id="checkbox1" type="checkbox">
+                                <label for="checkbox1">
+                                </label>
+                            </div>
+                        </th>
+                        <th style="width:1%;position:relative">
+                            <select>
+                                <option value="All">Tất cả</option>
+                                <option value="Due date">Ngày hết hạn</option>
+                            </select>
+                            <div class="selectLabel"></div>
+                        </th>
+                        <th style="width:240px;">CTA</th>
+                        <th>Phân loại</th>
+                        <th>Tổng tiền</th>
+                        <th style="width:190px;">Tài khoản</th>
+                        <th>Số lượng công việc</th>
+                        <th>Ngày hết hạn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background:#c6c9ca">
+                        <td class="td"></td>
+                        <td class="td"></td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th colspan="8" style="background-color:#5f7a76">Hết hạn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let cusCTA of customerCTA; let i = index">
+                        <tr *ngIf="cusCTA.ctaDueDateList != null && cusCTA.ctaDueDateList.length != 0">
+                            <td>
+                                <div class="checkbox checkbox-thc" style="margin-bottom:0;">
+                                    <input id="cusCTADd{{i}}" type="checkbox">
+                                    <label for="cusCTADd{{i}}">
+                                    </label>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div>
+                                    <p style="float:left; color:darkslategrey">
+                                        <i class="fa fa-star" aria-hidden="true" style="padding-right: 5px;"></i>{{cusCTA.name}}
+                                    </p>
+                                </div>
+                            </td>
+                            <td style="vertical-align:text-top;">
+                                <div class="orange-type text-type">CSM</div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td class="cta-control-total">{{cusCTA.totalDueDate}}</td>
+                            <td></td>
+                        </tr>
+                        <ng-container *ngFor="let DueDateList of cusCTA.ctaDueDateList; let j = index">
+                            <tr>
+                                <td>
+                                    <div class="checkbox checkbox-thc" style="margin-bottom:0;">
+                                        <input id="DueDate{{i}}{{j}}" type="checkbox">
+                                        <label for="DueDate{{i}}{{j}}">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button (click)="updateCTADD(i,j)">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button (click)="delete(DueDateList.id)">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <div>
+                                        <a (click)="openViewtaskDd(i,j)">
+                                            {{DueDateList.subject}}
+                                        </a>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:text-top;">
+                                    <!-- <div class="orange-type text-type"></div> -->
+                                </td>
+                                <td class="cta-control-lostCost">{{DueDateList.lostCost}}</td>
+                                <td class="cta-control-name">
+                                    <p style="color:darkslategrey">
+                                        {{DueDateList.fullNameAdmin}}
+                                    </p>
+                                </td>
+                                <td></td>
+                                <td>{{DueDateList.dueDate}}</td>
+                            </tr>
+                        </ng-container>
+                    </ng-container>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th colspan="8" style="background-color:#5f7a76">Hôm nay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let cusCTA of customerCTA; let i = index">
+                        <tr *ngIf="cusCTA.ctaEffectList != null && cusCTA.ctaEffectList.length != 0">
+                            <td>
+                                <div class="checkbox checkbox-thc" style="margin-bottom:0;">
+                                    <input id="cusCTAEf{{i}}" type="checkbox">
+                                    <label for="cusCTAEf{{i}}">
+                                    </label>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <div>
+                                    <p style="float:left;color:darkslategrey">
+                                        <i class="fa fa-star" aria-hidden="true" style="padding-right: 5px;"></i>{{cusCTA.name}}
+                                    </p>
+                                </div>
+                            </td>
+                            <td style="vertical-align:text-top;">
+                                <div class="orange-type text-type">CSM</div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td class="cta-control-total">{{cusCTA.totalEffect}}</td>
+                            <td></td>
+                        </tr>
+                        <ng-container *ngFor="let EffDateList of cusCTA.ctaEffectList; let j = index">
+                            <tr>
+                                <td>
+                                    <div class="checkbox checkbox-thc" style="margin-bottom:0;">
+                                        <input id="Effect{{i}}{{j}}" type="checkbox">
+                                        <label for="Effect{{i}}{{j}}">
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button (click)="updateCTADD(i,j)">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button (click)="delete(EffDateList.id)">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <div>
+                                        <a (click)="openViewtaskDd(i,j)">
+                                            {{EffDateList.subject}}
+                                        </a>
+                                    </div>
+                                </td>
+                                <td style="vertical-align:text-top;">
+                                    <!-- <div class="orange-type text-type"></div> -->
+                                </td>
+                                <td class="cta-control-lostCost">{{EffDateList.lostCost}}</td>
+                                <td class="cta-control-name">
+                                    <p style="color:darkslategrey">
+                                        {{EffDateList.fullNameAdmin}}
+                                    </p>
+                                </td>
+                                <td></td>
+                                <td>{{EffDateList.dueDate}}</td>
+                            </tr>
+                        </ng-container>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

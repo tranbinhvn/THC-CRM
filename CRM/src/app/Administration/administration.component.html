@@ -1,0 +1,171 @@
+<div class="container-fluid">
+    <ul class="dash-ul-general" style="background-color:rgb(255, 255, 255); height: 47px;">
+        <div class="menu-item-icon admin-cog pull-left">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+        </div>
+        <div class="tritangle"></div>
+        <li class="menu-item-icon main-menu-item">
+            <div class="pull-left shared-view management-menu-general">
+                <a [routerLink]="['/administration']">Quản lý người dùng
+                </a>
+                <ul class="dash-ul dash-ul-management">
+                    <li>
+                        <a [routerLink]="['/administration/adminlocation']">
+                            Quản lý khu vực
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/adminmarketlevel']">
+                            Quản lý thị trường mức
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/adminposition']">
+                            Quản lý chức danh
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/adminrole']">
+                            Vai trò quản trị
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item">
+            <div class="pull-left shared-view management-menu-general">
+                <a [routerLink]="['/administration/customers']">Khách hàng
+                </a>
+                <ul class="dash-ul dash-ul-management">
+                    <!-- <li>
+                        <a [routerLink]="['/administration/customerasign']">
+
+                            Chăm sóc khách hàng
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item">
+            <div class="pull-left shared-view management-menu-general">
+                <a [routerLink]="['/administration/contract']">Hợp đồng
+                </a>
+                <ul class="dash-ul dash-ul-management">
+                    <!-- <li>
+                        <a [routerLink]="['/administration/customerasign']">
+
+                            Chăm sóc khách hàng
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item ">
+            <div class="pull-left shared-view management-menu-general">
+                <a [routerLink]="['/administration/product']">Sản phẩm
+                </a>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item">
+            <div class="pull-left shared-view management-menu-general">
+                <a>Thông báo
+                </a>
+                <ul class="dash-ul dash-ul-management">
+                    <li>
+                        <a [routerLink]="['/administration/ticket']">
+                            Vấn đề
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/comment']">
+                            Bình luận
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/status']">
+                            Trạng thái
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item">
+            <div class="pull-left shared-view management-menu-general">
+                <a>Thị trường</a>
+                <ul class="dash-ul dash-ul-management">
+                    <li>
+                        <a [routerLink]="['/administration/marketlevel']">
+                            Thị trường mức
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/region']">
+                            Khu vực
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/country']">
+                            Đất nước
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item">
+            <div class="pull-left shared-view management-menu-general">
+                <a>Chức vụ
+                </a>
+                <ul class="dash-ul dash-ul-management">
+                    <li>
+                        <a [routerLink]="['/administration/position']">
+                            Danh sách chức vụ
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/role']">
+                            Vai trò
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item">
+            <div class="pull-left shared-view management-menu-general">
+                <a>CTAs</a>
+                <ul class="dash-ul dash-ul-management">
+                    <li>
+                        <a [routerLink]="['/administration/cta-comment']">
+                            CTA Bình luận
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/cta-status']">
+                            CTA Trạng thái
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/cta-type']">
+                            CTA Phân loại
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/cta-reason']">
+                            CTA Lý do
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/administration/cta-priority']">
+                            CTA Ưu tiên
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item">
+            <div class="pull-left shared-view management-menu-general">
+                <a [routerLink]="['/administration/send-mail']">Send-Mail</a>
+            </div>
+        </li>
+    </ul>
+    <router-outlet></router-outlet>
+</div>

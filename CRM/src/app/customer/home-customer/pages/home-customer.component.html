@@ -1,0 +1,106 @@
+<div class="col-lg-12" style="background-color: #fff; padding: 0;position:relative">
+    <div class="pull-left shared-view standard-view">
+        <span>Góc nhìn
+            <i class="fa fa-caret-down" aria-hidden="true" style="padding-left:5px;"></i>
+        </span>
+        <ul class="dash-ul">
+            <li>Giám đốc</li>
+            <li>Nhân viên</li>
+        </ul>
+    </div>
+    <div class="pull-left block-colorful-4" style="margin-left: 160px;">
+        <img src="assets/images/user.png" />
+        <h4>{{totalCustomer}} Khách hàng</h4>
+    </div>
+    <div class="pull-left block-colorful-4">
+        <img src="assets/images/coins.png" />
+        <h4>$18,700 ATR</h4>
+    </div>
+    <!-- <div class="pull-left block-colorful-4">
+        <img src="assets/images/group.png" />
+        <h4>5,000 Người dùng</h4>
+    </div> -->
+    <div class="pull-right" style="padding: 15px 15px 0 0;">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+    </div>
+</div>
+<div class="setting-db-body pull-left">
+    <div class="table-responsive col-lg-12 padd-none">
+
+        <div class="table-color">
+            <table class="table th-table thc-table table-striped">
+                <thead>
+                    <tr>
+                        <th>Khách hàng</th>
+                        <th>Mã khách hàng</th>
+                        <th>Ngày gia hạn</th>
+                        <th>Số điện thoại</th>
+                        <th>Tổng giá trị hợp đồng</th>
+                        <th>Email</th>
+                        <th>Điểm sức khỏe</th>
+                        <th>Trạng thái</th>
+                        <th>Địa chỉ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background:#c6c9ca">
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td class="td">
+                            <input type="text">
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr *ngFor="let i=index,let item of customers">
+                        <td>
+                            <div class="name-catagory">
+                                <a [routerLink]="['/customer/detail',item.id]">{{item.name}}</a>
+                            </div>
+                        </td>
+                        <td class="align-right">{{item.displayName}}</td>
+                        <td>2016-02-30</td>
+                        <td class="align-left">{{item.phone}}</td>
+                        <td class="align-left">$ 45.000</td>
+                        <td class="align-left">{{item.email}}</td>
+                        <td>
+                            <div class="green-type number-type">60</div>
+                        </td>
+                        <td class="align-left">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="{{i}}" checked>
+                                <label class="onoffswitch-label" for="{{i}}">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td class="align-left">{{item.address}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>

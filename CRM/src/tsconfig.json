@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": "./",
+    "paths": {
+      "global-contants/*": ["app/sharedmodule/category/global-contants/*"],     
+
+      "sharedmodule/*": ["app/sharedmodule/*"],
+      "category/*": ["app/sharedmodule/category/*"],
+      "modals/*": ["app/sharedmodule/modals/*"],
+      "api/*": ["app/sharedmodule/api/*"],
+      "models/*": ["app/sharedmodule/models/*"],
+      "alert-confirm/*": ["app/sharedmodule/modals/alert-confirm-modals/*"],
+      "share-models/*": ["app/sharedmodule/models/share-models/*"],
+      "organization-model/*": ["app/sharedmodule/models/organization-model/*"],
+      "position-model/*": ["app/sharedmodule/models/position-model/*"],
+      "login-model/*":["app/sharedmodule/models/login-model/*"],
+      "tags/*":["app/sharedmodule/tags/*"],
+      "pdfmake-apply/*":["app/pdfmake-apply/*"]
+    }
+  }
+}

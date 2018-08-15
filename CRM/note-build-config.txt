@@ -1,0 +1,94 @@
+  
+  //package.json
+"scripts": {
+    "build": "tsc -p src/",
+    "build:watch": "tsc -p src/ -w",
+    "build:e2e": "tsc -p e2e/",
+    "serve": "lite-server -c=bs-config.json",
+    "serve:e2e": "lite-server -c=bs-config.e2e.json",
+    "prestart": "npm run build",
+    "start": "concurrently \"npm run copy\" \"npm run serve\" \"npm run css:watch\"",
+    "pree2e": "npm run build:e2e",
+    "e2e": "concurrently \"npm run serve:e2e\" \"npm run protractor\" --kill-others --success first",
+    "preprotractor": "webdriver-manager update",
+    "protractor": "protractor protractor.config.js",
+    "pretest:once": "npm run build",
+    "copy-dist-files": "node ./copy-dist-files.js",
+    "lint": "tslint ./src/**/*.ts -t verbose",
+    "copy:dist": "cpx src/*.{js,css,html,js.map} dist",
+    "copy:dist2": "cpx src/app/*.{js,css,html,js.map} dist/app",
+    "copy:dist3": "cpx src/app/**/*.{js,css,html,js.map} dist/app",
+    "copy:dist4": "cpx src/assets/**/*  dist/assets",
+    "copy:dist5": "cpx src/bootstrap/**/* dist/bootstrap",
+    "copy:dist6": "cpx src/vendor/**/* dist/vendor",
+    "copy": "concurrently \"npm run copy:dist\" \"npm run copy:dist2\" \"npm run copy:dist3\" \"npm run copy:dist4\" \"npm run copy:dist5\" \"npm run copy:dist6\" ",
+    "css": "node-sass src/ -o dist",
+    "css:watch": "npm run css"
+  },
+  // old
+   "scripts": {
+    "build": "tsc -p src/",
+    "build:watch": "tsc -p src/ -w",
+    "build:e2e": "tsc -p e2e/",
+    "serve": "lite-server -c=bs-config.json",
+    "serve:e2e": "lite-server -c=bs-config.e2e.json",
+    "prestart": "npm run build",
+    "start": "concurrently \"npm run build:watch\" \"npm run serve\" \"npm run css:watch\"",
+    "pree2e": "npm run build:e2e",
+    "e2e": "concurrently \"npm run serve:e2e\" \"npm run protractor\" --kill-others --success first",
+    "preprotractor": "webdriver-manager update",
+    "protractor": "protractor protractor.config.js",
+    "lint": "tslint ./src/**/*.ts -t verbose",
+    "css": "node-sass src/ -o src/dist",
+    "css:watch": "npm run css && node-sass src/ -wo src/dist"
+  },
+
+
+ //bs-config.json
+ { 
+  "open": false,
+  "logLevel": "silent",
+  "port": 3000,
+  "server": {
+    "baseDir": "dist",
+    "routes": {
+      "/node_modules": "node_modules"
+    }
+  }
+}
+
+
+{ 
+  
+  "server": {
+    "baseDir": "src",
+    "routes": {
+      "/node_modules": "node_modules"
+    }
+  }
+}
+
+// app.component
+ styleUrls: [
+   'scss/base.css'
+    ,'scss/form.css'
+    ,'scss/button.css'
+    ,'scss/elements.css'
+    ,'scss/style.css'
+    ,'scss/managementUser.css'
+    ,'scss/helper.css'
+    ,'scss/app.component.css'
+    , "node_modules/ng2-tree/styles.css"
+    , "node_modules/angular-vertical-timeline/vertical-timeline.css"
+
+ './../dist/scss/base.css'
+    , './../dist/scss/form.css'
+    , './../dist/scss/button.css'
+    , './../dist/scss/elements.css'
+    , './../dist/scss/style.css'
+    , './../dist/scss/managementUser.css'
+    , './../dist/scss/helper.css'
+    , './../dist/scss/app.component.css'
+    , "node_modules/ng2-tree/styles.css"
+    , "node_modules/angular-vertical-timeline/vertical-timeline.css"
+  ],

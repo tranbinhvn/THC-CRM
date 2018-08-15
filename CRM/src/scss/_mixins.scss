@@ -1,0 +1,68 @@
+/* Detect variable screen */
+$phone-small: phone-small;
+$phone-med : phone-med;
+$tablet-portrait : tablet-portrait;
+$tablet-landscape : tablet-landscape;
+$desktop-med-1 : desktop-med-1;
+$desktop-med-2 : desktop-med-2;
+$tablet-portrait-up : tablet-portrait-up;
+$tablet-landscape-up : tablet-landscape-up;
+$desktop-med-up-1 : desktop-med-up-1;
+$desktop-med-up-2 : desktop-med-up-2;
+$desktop-large : desktop-large;
+$desktop-extra-large: desktop-extra-large;
+$desktop-large-up-1 : desktop-large-up-1;
+$desktop-large-up-2 : desktop-large-up-2;
+$desktop-large-up-3 : desktop-large-up-3;
+
+$phone-med-tablet-portrait : phone-med-tablet-portrait;
+$tablet-portrait-tablet-landscape : tablet-portrait-tablet-landscape;
+$tablet-landscape-desktop-med : tablet-landscape-desktop-med;
+
+@mixin for-size($size) {
+  @if $size == phone-small {
+    @media (max-width: 319px) { @content; }
+  } @else if $size == phone-med {
+    @media (max-width: 479px) { @content; }
+  } @else if $size == tablet-portrait {
+    @media (max-width: 767px) { @content; }
+  } @else if $size == tablet-landscape {
+    @media (max-width: 991px) { @content; }
+  } @else if $size == desktop-med-1 {
+    @media (max-width: 1023px) { @content; }
+  } @else if $size == desktop-med-2 {
+    @media (max-width: 1365px) { @content; }
+  } @else if $size == desktop-large {
+    @media (max-width: 1599px) {
+      @content;
+    }
+  } @else if $size == desktop-extra-large {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  }
+  @else if $size == tablet-portrait-up {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @else if $size == tablet-landscape-up {
+    @media (min-width: 980px) { @content; }
+  } @else if $size == desktop-med-up-1 {
+    @media (min-width: 1024px) { @content; }
+  } @else if $size == desktop-med-up-2 {
+    @media (min-width: 1365px) { @content; }
+  } @else if $size == desktop-large-up-1 {
+    @media (min-width: 1600px) {  @content;  }
+  } @else if $size == desktop-large-up-2 {
+    @media (min-width: 1680px) {  @content;  }
+  } @else if $size == desktop-large-up-3 {
+    @media (min-width: 1920px) {  @content;  }
+  } @else if $size == phone-med-tablet-portrait {
+    @media (min-width: 480px) and (max-width: 767px) { @content; }
+  } @else if $size == tablet-portrait-tablet-landscape {
+    @media (min-width: 768px) and (max-width: 979px) { @content; }
+  } @else if $size == tablet-landscape-desktop-med {
+    @media (min-width: 980px) and (max-width: 1199px) { @content; }
+  }
+}

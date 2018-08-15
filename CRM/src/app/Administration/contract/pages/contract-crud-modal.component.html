@@ -1,0 +1,99 @@
+<form #f="ngForm" name="contractFrom" (ngSubmit)="close(f.form)" novalidate>
+    <div class="modal-header">
+        <h4 class="modal-title">{{this.context.dataMessage}}</h4>
+    </div>
+    <div class="modal-body clearfix small-scroll-bar">
+        <div class="col-md-9">
+            <div class="modal-main-content">
+                <div class="modal-main-content-body">
+                    <div class="form-group">
+                        <label class="control-label">Số hợp đồng:</label>
+                        <input type="text" name="contractNo" #contractNo="ngModel" class="form-control" [(ngModel)]="contract.contractNo" required
+                            minlength="5" maxlength="50" />
+                        <div *ngIf="contractNo.invalid && (contractNo.dirty || contractNo.touched)" class="alert alert-danger ">
+                            <div *ngIf="contractNo.errors.required">
+                                Số hợp đồng là bắt buộc.
+                            </div>
+                            <div *ngIf="contractNo.errors.minlength">
+                                Số hợp đồng phải dài hơn 5 ký tự và nhỏ hơn 50 ký tự.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Giá trị hợp đồng:</label>
+                        <input type="text" name="value" #value="ngModel" class="form-control" [(ngModel)]="contract.value" required minlength="5"
+                            maxlength="50" />
+                        <div *ngIf="value.invalid && (contractNo.dirty || value.touched)" class="alert alert-danger ">
+                            <div *ngIf="value.errors.required">
+                                Giá trị hợp đồng là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Gia hạn: </label>
+                        <select class="form-control" name="isRenew" #isRenew="ngModel" [(ngModel)]="contract.isRenew" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.key" *ngFor="let item of listReNew">{{item.value}}</option>
+                        </select>
+                        <div *ngIf="isRenew.invalid && (isRenew.dirty || isRenew.touched)" class="alert alert-danger ">
+                            <div *ngIf="isRenew.errors.required">
+                                Gia hạn là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label">Nhân viên bán hàng: </label>
+                        <select class="form-control" name="saleId" #saleId="ngModel" [(ngModel)]="contract.saleId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of admins">{{item.fullName}}</option>
+                        </select>
+                        <div *ngIf="saleId.invalid && (saleId.dirty || saleId.touched)" class="alert alert-danger ">
+                            <div *ngIf="saleId.errors.required">
+                                Nhân viên bán hàng là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Liên hệ: </label>
+                        <select class="form-control" name="contactId" #contactId="ngModel" [(ngModel)]="contract.contactId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of contacts">{{item.fullName}}</option>
+                        </select>
+                        <div *ngIf="contactId.invalid && (contactId.dirty || contactId.touched)" class="alert alert-danger ">
+                            <div *ngIf="contactId.errors.required">
+                                Liên hệ là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Khách hàng: </label>
+                        <select class="form-control" name="customerId" #customerId="ngModel" [(ngModel)]="contract.customerId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of customers">{{item.name}}</option>
+                        </select>
+                        <div *ngIf="customerId.invalid && (customerId.dirty || customerId.touched)" class="alert alert-danger ">
+                            <div *ngIf="customerId.errors.required">
+                                Khách hàng là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-bottom-btn align-right">
+        <button type="submit" class="admin-btn  thc-pad-2 thc-btn-icon admin-btn-save">
+            <span class="icon fa fa-check"></span>Hoàn tất
+        </button>
+        <button type="button" class="admin-btn thc-pad-2 thc-btn-icon admin-btn-cancel" (click)="dismiss()">
+            <span class="icon fa fa-close"></span>Hủy bỏ
+        </button>
+    </div>
+
+</form>

@@ -1,0 +1,102 @@
+<form #f="ngForm" name="customerFrom" (ngSubmit)="close(f.form)" novalidate>
+    <div class="modal-header">
+        <h4 class="modal-title">{{this.context.dataMessage}}</h4>
+    </div>
+    <div class="modal-body clearfix small-scroll-bar">
+        <div class="col-md-9">
+            <div class="modal-main-content">
+                <div class="modal-main-content-body">
+                    <div class="form-group">
+                        <label class="control-label">Tên khách hàng:</label>
+                        <input type="text" name="name" #name="ngModel" class="form-control" [(ngModel)]="customer.name" required />
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger ">
+                            <div *ngIf="name.errors.required">
+                                Tên khách hàng là bắt buộc.
+                            </div>
+                            <div *ngIf="name.errors.minlength">
+                                Tên khách hàng phải dài hơn 5 ký tự và nhỏ hơn 50 ký tự.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Tên hiển thị:</label>
+                        <input type="text" name="displayName" #displayName="ngModel" class="form-control" [(ngModel)]="customer.displayName" required
+                        />
+                        <div *ngIf="displayName.invalid && (displayName.dirty || displayName.touched)" class="alert alert-danger ">
+                            <div *ngIf="displayName.errors.required">
+                                Tên hiển thị là bắt buộc.
+                            </div>
+                            <div *ngIf="displayName.errors.minlength">
+                                Tên hiển thị phải dài hơn 5 ký tự và nhỏ hơn 50 ký tự.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Địa chỉ:</label>
+                        <input type="text" name="address" #address="ngModel" class="form-control" [(ngModel)]="customer.address" required />
+                        <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger ">
+                            <div *ngIf="address.errors.required">
+                                Địa chỉ là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Số điện thoại:</label>
+                        <input type="text" name="phone" #phone="ngModel" class="form-control" [(ngModel)]="customer.phone" required minlength="5"
+                            maxlength="50" />
+                        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger ">
+                            <div *ngIf="phone.errors.required">
+                                Số điện thoại là bắt buộc.
+                            </div>
+                            <div *ngIf="phone.errors.minlength">
+                                Số điện thoại phải dài hơn 5 ký tự và nhỏ hơn 50 ký tự.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Địa chỉ email:</label>
+                        <input type="text" name="email" #email="ngModel" class="form-control" [(ngModel)]="customer.email" required />
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger ">
+                            <div *ngIf="email.errors.required">
+                                Địa chỉ email là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Đơn vị cha: </label>
+                        <select class="form-control" name="parentId" #parentId="ngModel" [(ngModel)]="customer.parentId">
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of customers">{{item.name}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Trạng thái: </label>
+                        <select class="form-control" name="statusId" #statusId="ngModel" [(ngModel)]="customer.statusId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of status">{{item.name}}</option>
+                        </select>
+                        <div *ngIf="statusId.invalid && (statusId.dirty || statusId.touched)" class="alert alert-danger ">
+                            <div *ngIf="statusId.errors.required">
+                                Trạng thái là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-bottom-btn align-right">
+        <button type="submit" class="admin-btn  thc-pad-2 thc-btn-icon admin-btn-save">
+            <span class="icon fa fa-check"></span>Hoàn tất
+        </button>
+        <button type="button" class="admin-btn thc-pad-2 thc-btn-icon admin-btn-cancel" (click)="dismiss()">
+            <span class="icon fa fa-close"></span>Hủy bỏ
+        </button>
+    </div>
+</form>

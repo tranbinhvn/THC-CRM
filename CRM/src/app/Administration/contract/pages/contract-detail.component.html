@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class='panel thc-panel thc-panel-primary clearfix' *ngIf='contract'>
+        <div class='panel-heading' style='font-size:large'>
+            Xem chi tiêt: {{contract.contractNo}}
+        </div>
+        <div class='panel-body'>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div class='row'>
+                        <div class='col-md-3'>Số hợp đồng:</div>
+                        <div class='col-md-6'>{{contract.contractNo}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Giá trị hợp đồng:</div>
+                        <div class='col-md-6'>{{contract.value}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Gia hạn:</div>
+                        <div class='col-md-6'>{{contract.isRenewName}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Nhân viên bán hàng:</div>
+                        <div class='col-md-6'>{{contract.fullNameSale}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Liên hệ:</div>
+                        <div class='col-md-6'>{{contract.fullNameContact}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Khách hàng:</div>
+                        <div class='col-md-6'>{{contract.customerName}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> {{'Common.Back' | translate}}
+        </a>
+    </div>
+</div>

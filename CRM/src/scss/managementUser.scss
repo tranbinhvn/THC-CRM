@@ -1,0 +1,74 @@
+@import './_variables.scss';
+
+// Administration
+.th-admin{
+  border-right: 1px solid white !important;
+  background: #425563;
+  color: white;
+  font-size: 12px;
+}
+.th-admin-1{
+  border-right: 1px solid white !important;
+  background: #425563;
+  color: white;
+  font-size: 12px;
+  text-align: left !important;
+}
+  
+.th-admin-2{
+  background-color: #C6C9CA;
+  border-right: 1px solid white !important;
+}
+
+.management-user{
+  width: 100%;
+  background-color: white;
+  margin-top: 10px;
+}
+
+.management-td {
+  text-align: left !important;
+}
+
+.admin-btn{
+  line-height: 38px;
+  padding: 0 20px;
+  font-size: 17px;
+}
+
+.admin-btn-save {
+  background: #01A982;
+  color: white;
+}
+
+.admin-btn-cancel {
+  line-height: 32px;
+  background: white;
+  color: black;
+  border: 3px solid #01A982;
+}
+
+.modal-bottom{
+  border-top: 1px solid $grey-03;
+  padding: 30px 0 30px 28px;
+}
+
+.management-menu-general{
+  padding: 13px !important;
+}
+
+.dash-ul-management{
+  width: 220px !important;
+}
+
+.cta-control-name a{
+  float: left;
+}
+
+.cta-control-total{
+  float: right;
+}
+
+.cta-control-lostCost{
+  float: left;
+}

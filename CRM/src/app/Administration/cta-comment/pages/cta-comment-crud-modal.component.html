@@ -1,0 +1,56 @@
+<form #f="ngForm" name="ctaCommentForm" (ngSubmit)="close(f.form)" novalidate>
+    <div class="modal-header">
+        <h4 class="modal-title">{{this.context.dataMessage}}</h4>
+    </div>
+    <div class="modal-body clearfix small-scroll-bar">
+        <div class="col-md-9">
+            <div class="modal-main-content">
+                <div class="modal-main-content-body">
+                    <div class="form-group">
+                        <label class="control-label">Bình luận: </label>
+                        <input type="text" class="form-control thc-input-2" #cmContent="ngModel" name="cmContent" [(ngModel)]="ctaComment.cmContent">
+                        <div *ngIf="cmContent.invalid && (cmContent.dirty || cmContent.touched)" class="alert alert-danger ">
+                            <div *ngIf="cmContent.errors.required">
+                                Tên bình luận là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">CTA:</label>
+                        <select class="form-control" name="cTAId" #cTAId="ngModel" [(ngModel)]="ctaComment.cTAId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of ctas">{{item.subject}}</option>
+                        </select>
+                        <div *ngIf="cTAId.invalid && (cTAId.dirty || cTAId.touched)" class="alert alert-danger ">
+                            <div *ngIf="cTAId.errors.required">
+                                CTA là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Trạng thái: </label>
+                        <select class="form-control" name="active" #active="ngModel" [(ngModel)]="ctaComment.active" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.key" *ngFor="let item of listStatus">{{item.value}}</option>
+                        </select>
+                        <div *ngIf="active.invalid && (active.dirty || active.touched)" class="alert alert-danger ">
+                            <div *ngIf="active.errors.required">
+                                Trạng thái là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-bottom-btn align-right">
+        <button type="submit" class="admin-btn  thc-pad-2 thc-btn-icon admin-btn-save">
+            <span class="icon fa fa-check"></span>Hoàn tất
+        </button>
+        <button type="button" class="admin-btn thc-pad-2 thc-btn-icon admin-btn-cancel" (click)="dismiss()">
+            <span class="icon fa fa-close"></span>Hủy bỏ
+        </button>
+    </div>
+</form>

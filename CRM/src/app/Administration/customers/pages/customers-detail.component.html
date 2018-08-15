@@ -1,0 +1,43 @@
+<div class="container-fluid">
+        <div class='panel thc-panel thc-panel-primary clearfix' *ngIf='customer'>
+            <div class='panel-heading' style='font-size:large'>
+                Xem chi tiêt: {{customer.name}}
+            </div>
+            <div class='panel-body'>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <div class='row'>
+                            <div class='col-md-3'>Tên khách hàng:</div>
+                            <div class='col-md-6'>{{customer.name}}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-3'>tên hiển thị:</div>
+                            <div class='col-md-6'>{{customer.displayName}}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-3'>Địa chỉ:</div>
+                            <div class='col-md-6'>{{customer.address}}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-3'>Số điện thoại:</div>
+                            <div class='col-md-6'>{{customer.phone}}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-3'>Địa chỉ email:</div>
+                            <div class='col-md-6'>{{customer.email}}</div>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-3'>Trạng thái:</div>
+                            <div class='col-md-6'>{{customer.statusName}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class='panel-footer'>
+            <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+                <i class='glyphicon glyphicon-chevron-left'></i> {{'Common.Back' | translate}}
+            </a>
+        </div>
+    </div>

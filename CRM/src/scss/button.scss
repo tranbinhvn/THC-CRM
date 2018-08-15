@@ -1,0 +1,207 @@
+@import "./_variables.scss";
+
+/*=======================================
+Switch button
+Circle button
+ ========================================*/
+
+/* Switch button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 25px;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 100%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+//Square button
+.square-button {
+  width: 16px;
+  height: 16px;
+  border-radius: 20%;
+  border: none;
+  font-size: 8px;
+  line-height: 16px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+.square-button.primary {
+  background: #0099e5;
+}
+
+.square-button.danger {
+  background: #ff4c4c;
+}
+
+//Circle button
+
+.circle-button {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  border: none;
+  font-size: 8px;
+  line-height: 16px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+.circle-button.primary {
+  background: #0099e5;
+}
+
+.circle-button.danger {
+  background: #ff4c4c;
+}
+
+.thc-btn {
+  line-height: 38px;
+  padding: 0 20px;
+  border-radius: 5px;
+  font-size: 17px;
+}
+.thc-btn-icon {
+  .icon {
+    margin-right: 10px;
+  }
+}
+
+.thc-btn-pad-1 {
+  padding: 0 12px;
+}
+
+.thc-btn-pad-2 {
+  padding: 0 28px;
+}
+
+.thc-btn-primary {
+  background: $mainColor-01;
+  color: white;
+
+  &:hover, &:focus {
+    color: #fff;
+  }
+}
+
+.thc-btn-danger {
+  background: $dangerColor;
+  color: $white;
+  &:hover{
+    color: #fff;
+  }
+  &:focus{
+    color: #fff;
+  }
+}
+
+.thc-btn-edit {
+  background: #D58430;
+  color: $white;
+  &:hover{
+    color: #fff;
+  }
+  &:focus{
+    color: #fff;
+  }
+}
+
+.thc-btn-secondary {
+  background: $mainColor-02;
+  color: white;
+}
+
+.thc-form-btn-group {
+  position: relative;
+  top: 20px;
+}
+
+//radio button
+.thc-radio-btn {
+  label:before {
+    content: '\f10c';
+    font-family:FontAwesome;
+    color: $mainColor-01;
+    margin-right: 3px;
+  }
+  input {
+    display: none;
+  }
+  input:checked +label:before {
+    content: '\f192';
+  }
+}
+/* ====== Reponsive ========*/
+@media (max-width: 1367px) {
+  .thc-btn {
+    font-size: 16px;
+    line-height: 36px;
+  }
+
+  .thc-input.has-btn + .input-group-btn {
+    .thc-btn {
+      height: 40px;
+      margin-top: -1px;
+    }
+  }
+}
+
+.thc-language{
+  margin: 17px 7px;
+}
+.btn-default, .btn-primary{
+  background-image: none;
+}
+
+
+
+
+

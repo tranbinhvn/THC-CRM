@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class='panel thc-panel thc-panel-primary clearfix' *ngIf='ticket'>
+        <div class='panel-heading' style='font-size:large'>
+            Xem chi tiêt: {{ticket.subject}}
+        </div>
+        <div class='panel-body'>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div class='row'>
+                        <div class='col-md-3'>Tiêu đề:</div>
+                        <div class='col-md-6'>{{ticket.subject}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Trạng thái:</div>
+                        <div class='col-md-6'>{{ticket.activeName}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Liên hệ:</div>
+                        <div class='col-md-6'>{{ticket.fullNameContact}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Khách hàng:</div>
+                        <div class='col-md-6'>{{ticket.customerName}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Sản phẩm:</div>
+                        <div class='col-md-6'>{{ticket.productName}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Loại vấn đề:</div>
+                        <div class='col-md-6'>{{ticket.ticketTypeName}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> {{'Common.Back' | translate}}
+        </a>
+    </div>
+</div>

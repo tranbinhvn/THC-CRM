@@ -1,0 +1,164 @@
+<header class="header">
+  <div class="main-header">
+    <div class="container-fluid padd-none">
+      <div class="col-lg-2">
+        <h1 class="header-logo">
+          <a class="header-logo-img">
+            <img src="assets/images/THC_Logo.png" alt="logo">
+          </a>
+        </h1>
+      </div>
+      <div class="col-lg-10 padd-none">
+        <div class="sub-menu">
+          <div class="search-form inline thc-search-form-bg ">
+            <input class="search-input" placeholder="Nhập mã nhân viên">
+            <span class="search-icon">
+              <i class="fa fa-search"></i>
+            </span>
+          </div>
+          <div class="user-account inline">
+            <a>
+              <img src="assets/images/user_demo.png" alt="user-avt">
+            </a>
+            <span class="online-status"></span>
+            <p class="logout">
+              <a [routerLink]="['/login']">{{ 'Home.Logout' | translate }}</a>
+            </p>
+          </div>
+          <ul class="topbar-menu inline">
+            <li class="help">
+              <i class="fa fa-question-circle thc-menu-question"></i>
+              <p class="logout">
+                Comming Son
+              </p>
+            </li>
+            <li class="noti">
+              <i class="fa fa-bell"></i>
+              <span class="item-num noti-num item-num">5</span>
+            </li>
+            <li class="msg">
+              <i class="fa fa-wechat thc-menu-question"></i>
+              <span class="item-num msg-num">3</span>
+              <p class="logout">
+                Comming Son
+              </p>
+            </li>
+          </ul>
+          <div class="pull-right">
+            <select name="" id="" class="thc-language">
+              <option value="">
+                <i class="fa fa-wechat"></i> VN
+              </option>
+              <option value="">
+                <i class="fa fa-wechat"></i> EN
+              </option>
+            </select>
+          </div>
+        </div>
+        <ul class="main-menu col-lg-12 padd-left-none nav-collapse">
+          <!-- Dashboard -->
+          <li class="menu-item-icon main-menu-item active">
+            <a [routerLink]="['']">Bàn làm việc</a>
+          </li>
+
+          <!-- Customer -->
+          <li class="menu-item-icon main-menu-item">
+            <a [routerLink]="['/customer']">Khách hàng</a>
+          </li>
+
+          <!-- Onboardlng -->
+          <li class="menu-item-icon main-menu-item">
+            <a>Khách hàng mới</a>
+          </li>
+
+          <!-- Control Board -->
+          <li class="menu-item-icon main-menu-item">
+            <a [routerLink]="['/control-board']">Bảng điều khiển</a>
+          </li>
+
+          <!-- Campalgns -->
+          <li class="menu-item-icon main-menu-item">
+            <a>Chiến lược</a>
+          </li>
+
+          <!-- Reports -->
+          <li class="menu-item-icon main-menu-item">
+            <a>Báo cáo</a>
+          </li>
+          <li class="menu-item-icon main-menu-item">
+            <a [routerLink]="['/administration']">Quản trị</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page-body container-fluid">
+  <div class="page-body-content">
+    <div class="page-body-main-content">
+      <div class="page-body-right-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer clearfix">
+  <div class="container-fluid main-footer">
+    <div class="row">
+      <div class="col-md-3">
+        <!-- <h4 class="ftitle">WebCSM Modules</h4> -->
+      </div>
+
+      <div class="col-md-3">
+        <!-- <h4 class="ftitle">WebCSM Reports</h4> -->
+      </div>
+
+      <div class="col-md-3">
+        <!-- <h4 class="ftitle">WebCSM Reports</h4> -->
+        <!-- <ul class="fcontent web-report">
+          <li class="web-report">
+            <a>
+              <i class="fa fa-fabook"></i>
+              Facebook
+            </a>
+          </li>
+        </ul> -->
+      </div>
+
+      <div class="col-md-3">
+        <h4 class="ftitle">WebCSM Supports</h4>
+
+        <ul class="fcontent web-supports">
+          <li class="web-support">
+            <a>
+              <i class="fa fa-envelope-o"></i> hiepnh10@gmail.com.vn
+            </a>
+          </li>
+          <li class="web-support">
+            <a>
+              <i class="fa fa-comments"></i> Contact us
+            </a>
+          </li>
+          <li class="web-support">
+            <a>
+              <i class="fa fa-phone"></i> Line support - 0243.200.9028
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <ul class="copyright-content">
+      <li>
+        <a> Điều khoản & Điều kiện</a>
+      </li>
+      <li>
+        <a> Chính sách bảo mật</a>
+      </li>
+      <li>Liên hệ với chúng tôi 2017 - WebCSM - Phát triển bởi IT THCo</li>
+    </ul>
+  </div>
+</div>

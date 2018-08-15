@@ -1,0 +1,151 @@
+@import './_variables.scss';
+
+/* Fonts
+================================================== */
+
+// Roboto
+@font-face {
+  font-family: "SFUIDisplay-Black";
+  src: url("./../assets/fonts/SFUIDisplay/SF-UI-Display-Black.ttf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Bold";
+  src: url("./../assets/fonts/SFUIDisplay/SF-UI-Display-Bold.ttf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Heavy";
+  src: url("./../assets/fonts/SFUIDisplay/SF-UI-Display-Heavy.ttf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Light";
+  src: url("./../assets/fonts/SFUIDisplay/SF-UI-Display-Light.ttf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Medium";
+  src: url("./../assets/fonts/SFUIDisplay/SF-UI-Text-Medium.otf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Regular";
+  src: url("./../assets/fonts/SFUIDisplay/SF-UI-Text-Regular.otf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Semibold";
+  src: url("./../assets/fonts/SFUIDisplay/SF-UI-Display-Semibold.ttf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Thin";
+  src: url("./../assets/fonts/SFUIDisplay/SF-UI-Display-Thin.ttf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Ultralight";
+  src: url("./../assets/fonts/SFUIDisplay/SF-UI-Display-Ultralight.ttf");
+}
+
+/*Reset
+================================================*/
+
+body {
+  background: #e9ebee;
+  font-family: $primaryRegularFont;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 1.29;
+  color: $grey-02;
+}
+
+/* List */
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* Form */
+input:not([type="radio"]):not([type="checkbox"]) {
+  width: 100%;
+}
+
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+// Scrollbar
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(100,100,100,0.4);
+}
+
+
+/* Table */
+//.th-lable {
+//  font-weight: 400;
+//}
+
+.th-table thead th {
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+}
+
+.table-fullwidth {
+  width: 100%;
+}
+
+.th-radio .th-lable {
+  cursor: pointer;
+}
+
+/* Paragraph */
+p {
+  font-size: 13px;
+}
+
+/* Button */
+button {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+button:focus {
+  outline: none;
+}
+
+a {
+  color: #1aa094;
+  cursor: pointer;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+.bold{
+  font-weight: bold;
+}
+.italic{
+  font-style: italic;
+}
+// wrapper
+//.col-md-1
+

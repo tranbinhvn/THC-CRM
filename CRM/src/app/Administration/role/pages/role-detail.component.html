@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class='panel thc-panel thc-panel-primary clearfix' *ngIf='role'>
+        <div class='panel-heading' style='font-size:large'>
+            Xem chi tiêt: {{role.name}}
+        </div>
+        <div class='panel-body'>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div class='row'>
+                        <div class='col-md-3'>Tên vai trò:</div>
+                        <div class='col-md-6'>{{role.name}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Trạng thái:</div>
+                        <div class='col-md-6'>{{role.activeName}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> {{'Common.Back' | translate}}
+        </a>
+    </div>
+</div>

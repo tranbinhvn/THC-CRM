@@ -1,0 +1,80 @@
+
+<div class="setting-db-body pull-left" style="overflow-y: scroll;
+height: 98%;">
+    <div class="detail-viewtask col-lg-12 padd-none">
+        <div class="top-task">
+            <div class="pull-left name-acount">
+                {{ctaView.customerName}}
+            </div>
+            <div class="pull-right">
+                <!-- <button>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+                <button>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button> -->
+                <button (click)="dismiss()">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <h3>{{ctaView.subject}}</h3>
+        </div>
+        <div class="col-lg-12" style="font-size: 13px;">
+            <div class="col-lg-4 padd-none">
+                <img src="assets/images/user_demo.png" alt="user-avt">
+                <span>{{ctaView.fullNameAdmin}}</span>
+            </div>
+            <div class="col-lg-3 padd-none">
+                <i class="fa fa-clock-o" aria-hidden="true" style="color:#818285"></i>
+                {{ctaView.dueDate}}
+            </div>
+            <div class="col-lg-3 padd-none">
+                <i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#f14555"></i>
+                {{ctaView.ctaPriorityName}}
+            </div>
+            <div class="col-lg-2 padd-none">
+                <i class="fa fa-info-circle" aria-hidden="true" style="color:#818285"></i>
+                Mở
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <h4>Lý do:</h4>
+            <div class="contain">
+                {{ctaView.ctaReasonName}}
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <h4>Mô tả:</h4>
+            <div class="contain">
+                <p>{{ctaView.descript}}</p>
+            </div>
+        </div>
+        <div class="col-lg-12" style="padding-bottom:20px;">
+            <h4>Tập tin đính kèm:</h4>
+            <i class="fa fa-file-pdf-o" aria-hidden="true" style="color:#818285;padding-left:10px"></i>
+            <a>namepdffile.pdf</a>
+        </div>
+        <div id="container" class="col-lg-12">
+            <input id="tab-1" type="radio" name="tab-group" checked="checked" />
+            <label for="tab-1">Tiện ích</label>
+            <input id="tab-2" type="radio" name="tab-group" />
+            <label for="tab-2">Hộp đựng</label>
+            <div id="content">
+                <div id="content-1" style="padding-left:0">
+                    <textarea class="col-lg-12" rows="4" cols="56" style="margin-bottom:10px;"></textarea>
+                    <button class="admin-btn thc-pad-2 thc-btn-icon admin-btn-cancel pull-right" type="button">
+                        Cập nhật
+                    </button>
+                </div>
+                <div id="content-2" style="padding-left:0">
+                    <p>Đạt được tỷ lệ</p>
+                    <p>Nâng cấp tình trạng</p>
+                    <p>Không có hoạt động> 3 tháng</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

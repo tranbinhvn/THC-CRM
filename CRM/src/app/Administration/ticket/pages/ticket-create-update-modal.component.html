@@ -1,0 +1,96 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{this.context.dataMessage}}</h4>
+</div>
+<form #f="ngForm" name="ticketFrom" (ngSubmit)="close(f.form)" novalidate>
+    <div class="modal-body clearfix small-scroll-bar">
+        <div class="col-md-9">
+            <div class="modal-main-content">
+                <div class="modal-main-content-body">
+                    <div class="form-group">
+                        <label class="control-label">Tiêu đề:</label>
+                        <input type="text" name="subject" #subject="ngModel" class="form-control" [(ngModel)]="ticket.subject" required />
+                        <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="alert alert-danger ">
+                            <div *ngIf="subject.errors.required">
+                                Tiêu đề là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Liên hệ: </label>
+                        <select class="form-control" name="contactId" #contactId="ngModel" [(ngModel)]="ticket.contactId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of contacts">{{item.fullName}}</option>
+                        </select>
+                        <div *ngIf="contactId.invalid && (contactId.dirty || contactId.touched)" class="alert alert-danger ">
+                            <div *ngIf="contactId.errors.required">
+                                Liên hệ là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Khách hàng: </label>
+                        <select class="form-control" name="customerId" #customerId="ngModel" [(ngModel)]="ticket.customerId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of customers">{{item.name}}</option>
+                        </select>
+                        <div *ngIf="customerId.invalid && (customerId.dirty || customerId.touched)" class="alert alert-danger ">
+                            <div *ngIf="customerId.errors.required">
+                                khách hàng là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label">Sản phẩm: </label>
+                        <select class="form-control" name="productId" #productId="ngModel" [(ngModel)]="ticket.productId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of products">{{item.name}}</option>
+                        </select>
+                        <div *ngIf="productId.invalid && (productId.dirty || productId.touched)" class="alert alert-danger ">
+                            <div *ngIf="productId.errors.required">
+                                Sản phẩm là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Loại vấn đề: </label>
+                        <select class="form-control" name="ticketTypeId" #ticketTypeId="ngModel" [(ngModel)]="ticket.ticketTypeId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of tickettypes">{{item.name}}</option>
+                        </select>
+                        <div *ngIf="contactId.invalid && (contactId.dirty || contactId.touched)" class="alert alert-danger ">
+                            <div *ngIf="contactId.errors.required">
+                                Liên hệ là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Trạng thái: </label>
+                        <select class="form-control" name="active" #active="ngModel" [(ngModel)]="ticket.active" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.key" *ngFor="let item of listActive">{{item.value}}</option>
+                        </select>
+                        <div *ngIf="active.invalid && (active.dirty || active.touched)" class="alert alert-danger ">
+                            <div *ngIf="active.errors.required">
+                                Trạng thái là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-bottom-btn align-right">
+        <button type="submit" class="admin-btn  thc-pad-2 thc-btn-icon admin-btn-save">
+            <span class="icon fa fa-check"></span>Hoàn tất
+        </button>
+        <button type="button" class="admin-btn thc-pad-2 thc-btn-icon admin-btn-cancel" (click)="dismiss()">
+            <span class="icon fa fa-close"></span>Hủy bỏ
+        </button>
+    </div>
+</form>

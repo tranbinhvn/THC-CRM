@@ -1,0 +1,260 @@
+<div class="container-fluid">
+    <ul class="ul-bar" style="background-color:rgb(255, 255, 255);height: 49px;;font-size:14px;">
+        <div class="menu-item-icon admin-cog pull-left" style="padding:15px;color:#fff">
+            {{customer.name}}
+        </div>
+        <div class="tritangle"></div>
+        <li class="menu-item-icon main-menu-item padd-right-none">
+            <div class="pull-left shared-view">
+                <a href="#">Thông tin chung</a>
+            </div>
+        </li>
+        <!-- <li class="menu-item-icon main-menu-item padd-right-none">
+            <div class="pull-left shared-view">
+                <a href="#">Hợp đồng</a>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item padd-right-none">
+            <div class="pull-left shared-view">
+                <a href="#">Giấy phép</a>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item padd-right-none">
+            <div class="pull-left shared-view">
+                <a href="#">Tình trạng kỹ thuật</a>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item padd-right-none">
+            <div class="pull-left shared-view">
+                <a href="#">Liên hệ</a>
+            </div>
+        </li>
+        <li class="menu-item-icon main-menu-item padd-right-none">
+            <div class="pull-left shared-view">
+                <a href="#">CTAs</a>
+            </div>
+        </li> -->
+        <li class="menu-item-icon main-menu-item padd-right-none">
+            <div class="pull-left shared-view">
+                <a href="#">Bình luận</a>
+            </div>
+        </li>
+        <div class="pull-right" style="padding: 15px 15px 0 0;">
+            <i aria-hidden="true" class="fa fa-cog"></i>
+        </div>
+        <div class="pull-right search-lst-block search-customer">
+            <input class="search-list" type="text" placeholder="Tim kiếm khách hàng ...">
+            <span class="search-lst-icon">
+                <i class="fa fa-search"></i>
+            </span>
+        </div>
+    </ul>
+    <div class="setting-db-body pull-left">
+        <div class="col-lg-12" style="color:#fff">
+            <div class="bl-color bl-color-1">
+                <div class="col-lg-4" style="padding-top: 13px;">
+                    <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-8 padd-left-none">
+                    <h4>Trạng thái</h4>
+                    <p>4-Expansion</p>
+                </div>
+
+            </div>
+            <div class="bl-color bl-color-2">
+                <div class="col-lg-4" style="padding-top: 13px;">
+                    <i class="fa fa-briefcase fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-8 padd-left-none">
+                    <h4>Hợp đồng</h4>
+                    <p>20</p>
+                </div>
+
+            </div>
+            <div class="bl-color bl-color-3">
+                <div class="col-lg-4" style="padding-top: 13px;">
+                    <i class="fa fa-cogs fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-8 padd-left-none">
+                    <h4>Mở CTAs</h4>
+                    <p>50</p>
+                </div>
+
+            </div>
+            <div class="bl-color bl-color-4">
+                <div class="col-lg-4" style="padding-top: 13px;">
+                    <i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-8 padd-left-none">
+                    <h4>Trường hợp mở</h4>
+                    <p>12</p>
+                </div>
+            </div>
+            <div class="bl-color bl-color-5">
+                <div class="col-lg-4" style="padding-top: 13px;">
+                    <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-8 padd-left-none">
+                    <h4>Điểm sức khỏe</h4>
+                    <p>12</p>
+                </div>
+
+            </div>
+            <div class="bl-color bl-color-6">
+                <div class="col-lg-4" style="padding-top: 13px;">
+                    <i class="fa fa-bar-chart fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-8 padd-left-none">
+                    <h4>Kết quả khảo sát</h4>
+                    <p>4</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <h3>Thông tin chung</h3>
+        </div>
+        <div class="table-responsive col-lg-12">
+            <div class="table-color table-info-customer">
+                <table class="table th-table thc-table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Mã khách hàng</td>
+                            <td>{{customer.displayName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tên khách hàng</td>
+                            <td>{{customer.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Khu vực</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Mã đất nước</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cấp thị trường</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>CAM Owner</td>
+                            <td>
+                                <a href=""></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ</td>
+                            <td>{{customer.address}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{customer.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Điện thoại</td>
+                            <td>{{customer.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Cờ FlexCare</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cờ Risk</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>MDCPID</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Tổng giá trị hợp đồng</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cột</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cờ ELA</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Công ty con</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- <div class="col-lg-12">
+            <h3>Hỗ trợ hợp đồng</h3>
+        </div> -->
+        <!-- <div class="table-responsive col-lg-12">
+            <div class="table-color table-info-customer">
+                <table class="table th-table thc-table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Mã khách hàng</td>
+                            <td>Avnet Inc</td>
+                        </tr>
+                        <tr>
+                            <td>Khách hàng</td>
+                            <td>Kaspersky Lab</td>
+                        </tr>
+                        <tr>
+                            <td>Khu vực</td>
+                            <td>AMS</td>
+                        </tr>
+                        <tr>
+                            <td>Mã đất nước</td>
+                            <td>14563-4543</td>
+                        </tr>
+                        <tr>
+                            <td>Cấp thị trường</td>
+                            <td>Middle</td>
+                        </tr>
+                        <tr>
+                            <td>CAM Owner</td>
+                            <td>
+                                <a href="">Jone Smith</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ</td>
+                            <td>350 Fifth Avenue, 34th floor New York, Ny 1005-8912 USA</td>
+                        </tr>
+                        <tr>
+                            <td>Cờ FlexCare</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Cờ Risk</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>MDCPID</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Tổng giá trị hợp đồng</td>
+                            <td>$ 18.000</td>
+                        </tr>
+                        <tr>
+                            <td>Cột</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cờ ELA</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Công ty con</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+    </div>
+</div>

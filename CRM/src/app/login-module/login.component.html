@@ -1,0 +1,24 @@
+<div class="login-form-wrapper wrapper">
+  <div class="login-form">
+    <h3 class="title">
+      Đăng nhập
+    </h3>
+    <form class="form">
+      <span class="err-msg">{{errorMsg}}</span>
+        <div class="input-field ">
+
+          <!--<label for="username">Tên đăng nhập:</label>-->
+          <input [(ngModel)]="account.username" name="username" type="text" required class="login-input" placeholder="Tên đăng nhập">
+          <!--<div *ngIf="!username.valid" class="invalid">Chưa nhập tên đăng nhập</div>-->
+        </div>
+
+        <div class="input-field ">
+          <!--<label for="password">Mật khẩu</label>-->
+          <input [(ngModel)]="account.password" name="password" type="password" required class="login-input" placeholder="Mật khẩu">
+          <!--<div *ngIf="!password.valid" class="invalid">Chưa nhập mật khẩu</div>-->
+        </div>
+
+      <button (click)="login()" id="btn-login" class="btn waves-effect waves-light" type="submit">Đăng nhập</button>
+    </form>
+  </div>
+</div>

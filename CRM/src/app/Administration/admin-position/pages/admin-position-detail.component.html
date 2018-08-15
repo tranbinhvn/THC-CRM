@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class='panel thc-panel thc-panel-primary clearfix' *ngIf='adminPosition'>
+        <div class='panel-heading' style='font-size:large'>
+            Xem chi tiêt: {{adminPosition.firstName}} {{adminPosition.lastName}}
+        </div>
+        <div class='panel-body'>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div class='row'>
+                        <div class='col-md-3'>Tên:</div>
+                        <div class='col-md-6'>{{adminPosition.adminFirstName}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Họ:</div>
+                        <div class='col-md-6'>{{adminPosition.adminLastName}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Chức danh:</div>
+                        <div class='col-md-6'>{{adminPosition.positionName}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Ngày hiệu lực:</div>
+                        <div class='col-md-6'>{{adminPosition.startDate}}</div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-3'>Ngày hết hiệu lực:</div>
+                        <div class='col-md-6'>{{adminPosition.endDate}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> {{'Common.Back' | translate}}
+        </a>
+    </div>
+</div>

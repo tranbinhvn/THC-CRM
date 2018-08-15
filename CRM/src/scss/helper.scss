@@ -1,0 +1,98 @@
+@import './_variables.scss';
+
+/*Align*/
+.align-right {
+  text-align: right !important;
+}
+
+.align-center {
+  text-align: center !important;
+}
+.align-left {
+  text-align: left !important;
+}
+/* Show hide */
+.hidden {
+  display: none;
+}
+
+/* Required */
+.required:after {
+  content: "*";
+  font-size: 13px;
+  color: red;
+  padding-left: 3px;
+}
+
+.clearfix {
+	clear: both;
+}
+
+/*float*/
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+/*background*/
+.bg-white {
+  background: #fff;
+}
+
+/*text decoration*/
+.underline {
+  text-decoration: underline;
+}
+
+.input-simulation {
+  line-height: 32px;
+}
+
+/*margin*/
+.mar-top-sm {
+  margin-top: 10px;
+}
+
+.mar-bt-lg {
+  margin-bottom: 40px;
+}
+.no-mar {
+  margin: 0;
+}
+
+/*inline*/
+.inline {
+  display: inline-block;
+}
+
+/*wrapper*/
+.no-padding-left {
+  padding-left: 0;
+}
+
+.no-padding-right {
+  padding-right: 0;
+}
+
+.no-padding-top {
+  padding-top: 0;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+// flex
+.flex {
+  display: flex;
+}
+
+.full-width {
+  width: 100%;
+}

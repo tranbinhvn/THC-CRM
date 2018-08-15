@@ -1,0 +1,10 @@
+CRM/node_modules/
+CRM/src/dist/
+CRMService/CRMApi/bin/
+CRMService/CRMApi/obj/
+CRMService/.vs/
+CRMService/.vs/CRMApi
+*.map
+*.js
+CRM/npm-debug.log
+CRM/dist/

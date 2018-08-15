@@ -1,0 +1,167 @@
+<form #f="ngForm" name="ctaForm" (ngSubmit)="close(f.form)" novalidate>
+    <div class="modal-header">
+        <h4 class="modal-title">{{this.context.dataMessage}}</h4>
+    </div>
+    <div class="modal-body clearfix small-scroll-bar">
+        <div class="col-lg-12">
+            <div class="modal-main-content">
+                <div class="modal-main-content-body">
+
+                    <div class="form-group">
+                        <label class="control-label">
+                            Tiêu đề
+                        </label>
+                        <input class="form-control" type="text" #subject="ngModel" name="subject" [(ngModel)]="cta.subject" required />
+                        <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="alert alert-danger ">
+                            <div *ngIf="subject.errors.required">
+                                Tiêu đề là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Số tiền thanh toán
+                        </label>
+                        <input class="form-control" type="text" #lostCost="ngModel" name="lostCost" [(ngModel)]="cta.lostCost" required />
+                        <div *ngIf="lostCost.invalid && (lostCost.dirty || lostCost.touched)" class="alert alert-danger ">
+                            <div *ngIf="lostCost.errors.required">
+                                Số tiền thanh toán là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Quản trị
+                        </label>
+                        <select class="form-control" name="adminId" #adminId="ngModel" [(ngModel)]="cta.adminId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of admins">{{item.fullName}}</option>
+                        </select>
+                        <div *ngIf="adminId.invalid && (adminId.dirty || adminId.touched)" class="alert alert-danger ">
+                            <div *ngIf="adminId.errors.required">
+                                Quản trị là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Lý do
+                        </label>
+                        <select class="form-control" name="ctaReasonId" #ctaReasonId="ngModel" [(ngModel)]="cta.ctaReasonId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of ctaRea">{{item.name}}</option>
+                        </select>
+                        <div *ngIf="ctaReasonId.invalid && (ctaReasonId.dirty || ctaReasonId.touched)" class="alert alert-danger ">
+                            <div *ngIf="ctaReasonId.errors.required">
+                                Lý do là bắt buộc.
+                            </div>
+                        </div>
+                        <label class="control-label">
+                            <a href="">Gán cho tôi</a>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Trạng thái
+                        </label>
+                        <select class="form-control" name="ctaStatusId" #ctaStatusId="ngModel" [(ngModel)]="cta.ctaStatusId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of ctaSta">{{item.name}}</option>
+                        </select>
+                        <div *ngIf="ctaStatusId.invalid && (ctaStatusId.dirty || ctaStatusId.touched)" class="alert alert-danger ">
+                            <div *ngIf="ctaStatusId.errors.required">
+                                Trạng thái là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Phân loại
+                        </label>
+                        <select class="form-control" name="ctaTypeId" #ctaTypeId="ngModel" [(ngModel)]="cta.ctaTypeId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of ctaTyp">{{item.name}}</option>
+                        </select>
+                        <div *ngIf="ctaTypeId.invalid && (ctaTypeId.dirty || ctaTypeId.touched)" class="alert alert-danger ">
+                            <div *ngIf="ctaTypeId.errors.required">
+                                Phân loại là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Khách hàng
+                        </label>
+                        <select class="form-control" name="customerId" #customerId="ngModel" [(ngModel)]="cta.customerId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of customers">{{item.displayName}}</option>
+                        </select>
+                        <div *ngIf="customerId.invalid && (customerId.dirty || customerId.touched)" class="alert alert-danger ">
+                            <div *ngIf="customerId.errors.required">
+                                Khách hàng là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Độ ưu tiên
+                        </label>
+                        <select class="form-control" name="ctaPriorityId" #ctaPriorityId="ngModel" [(ngModel)]="cta.ctaPriorityId" required>
+                            <option value="" disabled="disabled">Chọn</option>
+                            <option [value]="item.id" *ngFor="let item of ctaPri">{{item.name}}</option>
+                        </select>
+                        <div *ngIf="ctaPriorityId.invalid && (ctaPriorityId.dirty || ctaPriorityId.touched)" class="alert alert-danger ">
+                            <div *ngIf="ctaPriorityId.errors.required">
+                                Độ ưu tiên là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Ngày hết hạn
+                        </label>
+                        <input class="form-control" type="date" #dueDate="ngModel" name="dueDate" [(ngModel)]="cta.dueDate" required />
+                        <div *ngIf="dueDate.invalid && (dueDate.dirty || dueDate.touched)" class="alert alert-danger ">
+                            <div *ngIf="dueDate.errors.required">
+                                Ngày hết hạn là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Mô tả
+                        </label>
+                        <!-- (ready)="onReady($event)" (focus)="onFocus($event)"(blur)="onBlur($event)"  -->
+                        <ckeditor [(ngModel)]="ckeditorContent" 
+                                  [readonly]="false" (change)="onChange($event)" debounce="400" 
+                                  [(ngModel)]="cta.descript"
+                                  [config]="{removeButtons : 'Copy,Paste,Undo,Redo,Anchor,Strike,Subscript,Superscript,Cut,Outdent,Indent,Link,Unlink,About,Save,NewPage,Source,Preview,Print,Templates,PasteText,PasteFromWord,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,RemoveFormat,Blockquote,CreateDiv,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Language,Image,Flash,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,TextColor,BGColor,Styles,Format,Font,FontSize,Maximize,ShowBlocks'}"
+                                  name="descript" #descript="ngModel">
+                        </ckeditor>
+                        <div *ngIf="descript.invalid && (descript.dirty || descript.touched)" class="alert alert-danger ">
+                            <div *ngIf="descript.errors.required">
+                                Lý do là bắt buộc.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Tệp tin đính kèm
+                        </label>
+                        <button type="button" class="admin-btn thc-pad-2 thc-btn-icon admin-btn-cancel">
+                            Chọn file
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-bottom-btn align-right">
+        <button type="submit" class="admin-btn  thc-pad-2 thc-btn-icon admin-btn-save">
+            <span class="icon fa fa-check"></span>Hoàn tất
+        </button>
+        <button type="button" class="admin-btn thc-pad-2 thc-btn-icon admin-btn-cancel" (click)="dismiss()">
+            <span class="icon fa fa-close"></span>Hủy bỏ
+        </button>
+    </div>
+</form>
