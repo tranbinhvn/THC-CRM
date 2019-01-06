@@ -1,0 +1,9 @@
+C:\Users\Admin\source\repos\WSdemo2\WSdemo2\bin\Debug\WSdemo2.exe
+C:\Users\Admin\source\repos\WSdemo2\WSdemo2\bin\Debug\WSdemo2.pdb
+C:\Users\Admin\source\repos\WSdemo2\WSdemo2\obj\Debug\WSdemo2.ProjectInstaller.resources
+C:\Users\Admin\source\repos\WSdemo2\WSdemo2\obj\Debug\WSdemo2.Service1.resources
+C:\Users\Admin\source\repos\WSdemo2\WSdemo2\obj\Debug\WSdemo2.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\WSdemo2\WSdemo2\obj\Debug\WSdemo2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\WSdemo2\WSdemo2\obj\Debug\WSdemo2.exe
+C:\Users\Admin\source\repos\WSdemo2\WSdemo2\obj\Debug\WSdemo2.pdb
+C:\Users\Admin\source\repos\WSdemo2\WSdemo2\obj\Debug\WSdemo2.csprojAssemblyReference.cache
